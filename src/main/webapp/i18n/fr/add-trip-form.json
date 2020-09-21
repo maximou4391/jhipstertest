@@ -7,8 +7,11 @@
     "arrivalTitle": "Arrivée",
     "detailsTitle": "Détails",
     "place": "Lieu de départ",
+    "placeError": "Lieu de départ est un champ obligatoire!",
     "date": "Date",
+    "dateError": "Date est un champ obligatoire!",
     "time": "Heure",
+    "timeError": "Heure est un champ obligatoire!",
     "utcZone": "Zone UTC",
     "cabinCategory": "Catégorie de cabine",
     "marketingFlightIdentifier": "Marketing flight identifier",
@@ -18,6 +21,7 @@
     "transportation": "Moyen de transport",
     "transportationPlaceholder": "Selectionner un moyen de trasnport",
     "bookingClass": "Classe de réservation",
-    "cabinClass": "Cabine"
+    "cabinClass": "Cabine",
+    "cabinClassPlaceholder": "Sélectionner une cabine"
   }
 }

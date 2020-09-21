@@ -7,9 +7,13 @@
     "arrivalTitle": "Arrival",
     "detailsTitle": "Details",
     "place": "Place",
+    "placeError": "Place is required!",
     "date": "Date",
+    "dateError": "Date is required!",
     "time": "Time",
+    "timeError": "Time is required!",
     "utcZone": "UTC Zone",
+    "utcZoneError": "UTC Zone is required!",
     "cabinCategory": "Cabin category",
     "marketingFlightIdentifier": "Marketing flight identifier",
     "operatingFlightIdentifier": "Operating flight identifier",
@@ -18,6 +22,7 @@
     "transportation": "Transportation",
     "transportationPlaceholder": "Select a transportation",
     "bookingClass": "Booking class",
-    "cabinClass": "Cabin class"
+    "cabinClass": "Cabin class",
+    "cabinClassPlaceholder": "Select a cabin class"
   }
 }

@@ -1,29 +1,52 @@
-<form class="add-trip-form">
+<form [formGroup]="addTripForm" (ngSubmit)="onAddTripFormSubmit(addTripForm.value)" class="add-trip-form">
 
     <div class="add-trip-section">
         <h2 jhiTranslate="addtripform.departureTitle">Departure</h2>
         <div class="form-group">
             <label for="departurePlace" jhiTranslate="addtripform.place">Place</label>
-            <input type="text" class="form-control" id="departurePlace" placeholder="{{ 'addtripform.airportPlaceholder'
-         | translate }}">
+            <input required id="departurePlace" formControlName="departurePlace" type="text" minlength="3" maxlength="3" class="form-control"
+                   placeholder="{{
+            'addtripform.airportPlaceholder'
+            | translate }}">
+            <div *ngIf="addTripForm.controls['departurePlace'].invalid && (addTripForm.controls['departurePlace'].dirty || addTripForm.controls['departurePlace'].touched)"
+                 class="text-danger" jhiTranslate="addtripform.placeError">
+                Place is required!
+            </div>
         </div>
         <div class="form-group">
             <label for="departureDate" jhiTranslate="addtripform.date">Date</label>
-            <input type="text" class="form-control" id="departureDate">
+            <input required id="departureDate" formControlName="departureDate" type="date" class="form-control">
+            <div *ngIf="addTripForm.controls['departureDate'].invalid && (addTripForm.controls['departureDate'].dirty || addTripForm.controls['departureDate'].touched)"
+                 class="text-danger" jhiTranslate="addtripform.dateError">
+                Date is required!
+            </div>
         </div>
 
         <div class="row">
             <div class="col container">
-                <label for="departureMinutes" jhiTranslate="addtripform.time">Time</label>
-                <div class="row minutes-and-hours">
-                    <input type="text" class="form-control col-sm-3" id="departureMinutes">
-                    <span>:</span>
-                    <input type="text" class="form-control col-sm-3" id="departureHours">
+                <label for="departureTime" jhiTranslate="addtripform.time">Time</label>
+                <input required id="departureTime" formControlName="departureTime" type="time" class="form-control">
+                <!--Other Custom solution-->
+<!--                <div class="row minutes-and-hours">-->
+<!--                    <input required type="text" class="form-control col-sm-3" id="departureMinutes">-->
+<!--                    <span>:</span>-->
+<!--                    <input required type="text" class="form-control col-sm-3" id="departureHours">-->
+<!--                </div>-->
+                <div *ngIf="addTripForm.controls['departureTime'].invalid && (addTripForm.controls['departureTime'].dirty || addTripForm.controls['departureTime'].touched)"
+                     class="text-danger" jhiTranslate="addtripform.timeError">
+                    Time is required!
                 </div>
             </div>
             <div class="form-group col">
                 <label for="departureUtcZone" jhiTranslate="addtripform.utcZone">UTC Zone</label>
-                <input type="text" class="form-control" id="departureUtcZone">
+                <select required id="departureUtcZone" formControlName="departureUtcZone" class="custom-select">
+                    <option *ngFor="let utcZone of utcZones" [value]="utcZone"
+                            [label]="utcZone"></option>
+                </select>
+                <div *ngIf="addTripForm.controls['departureUtcZone'].invalid && (addTripForm.controls['departureUtcZone'].dirty || addTripForm.controls['departureUtcZone'].touched)"
+                     class="text-danger" jhiTranslate="addtripform.utcZoneError">
+                    UTC zone is required!
+                </div>
             </div>
         </div>
     </div>
@@ -33,26 +56,49 @@
         <h2 jhiTranslate="addtripform.arrivalTitle">Arrival</h2>
         <div class="form-group">
             <label for="arrivalPlace" jhiTranslate="addtripform.place">Place</label>
-            <input type="text" class="form-control" id="arrivalPlace" placeholder="{{ 'addtripform.airportPlaceholder'
+            <input required id="arrivalPlace" formControlName="arrivalPlace" type="text" minlength="3" maxlength="3"
+                   class="form-control"
+                   placeholder="{{
+            'addtripform.airportPlaceholder'
              | translate }}">
+            <div *ngIf="addTripForm.controls['arrivalPlace'].invalid && (addTripForm.controls['arrivalPlace'].dirty || addTripForm.controls['arrivalPlace'].touched)"
+                 class="text-danger" jhiTranslate="addtripform.placeError">
+                Place is required!
+            </div>
         </div>
         <div class="form-group">
             <label for="arrivalDate" jhiTranslate="addtripform.date">Date</label>
-            <input type="text" class="form-control" id="arrivalDate">
+            <input required id="arrivalDate" formControlName="arrivalDate" type="date" class="form-control">
+            <div *ngIf="addTripForm.controls['arrivalDate'].invalid && (addTripForm.controls['arrivalDate'].dirty || addTripForm.controls['arrivalDate'].touched)"
+                 class="text-danger" jhiTranslate="addtripform.dateError">
+                Date is required!
+            </div>
         </div>
 
         <div class="row">
             <div class="col container">
-                <label for="arrivalMinutes" jhiTranslate="addtripform.time">Time</label>
-                <div class="row minutes-and-hours">
-                    <input type="text" class="form-control col-sm-3" id="arrivalMinutes">
-                    <span>:</span>
-                    <input type="text" class="form-control col-sm-3" id="arrivalHours">
+                <label for="arrivalTime" jhiTranslate="addtripform.time">Time</label>
+                <input required id="arrivalTime" formControlName="arrivalTime" type="time" class="form-control">
+<!--                <div class="row minutes-and-hours">-->
+<!--                    <input required type="text" class="form-control col-sm-3" id="arrivalMinutes">-->
+<!--                    <span>:</span>-->
+<!--                    <input required type="text" class="form-control col-sm-3" id="arrivalHours">-->
+<!--                </div>-->
+                <div *ngIf="addTripForm.controls['arrivalTime'].invalid && (addTripForm.controls['arrivalTime'].dirty || addTripForm.controls['arrivalTime'].touched)"
+                     class="text-danger" jhiTranslate="addtripform.timeError">
+                    Time is required!
                 </div>
             </div>
             <div class="form-group col">
                 <label for="arrivalUtcZone" jhiTranslate="addtripform.utcZone">UTC Zone</label>
-                <input type="text" class="form-control" id="arrivalUtcZone">
+                <select required id="arrivalUtcZone" formControlName="arrivalUtcZone" class="custom-select">
+                    <option *ngFor="let utcZone of utcZones" [value]="utcZone"
+                            [label]="utcZone"></option>
+                </select>
+                <div *ngIf="addTripForm.controls['arrivalUtcZone'].invalid && (addTripForm.controls['arrivalUtcZone'].dirty || addTripForm.controls['arrivalUtcZone'].touched)"
+                     class="text-danger" jhiTranslate="addtripform.utcZoneError">
+                    UTC zone is required!
+                </div>
             </div>
         </div>
     </div>
@@ -62,30 +108,30 @@
         <h2 jhiTranslate="addtripform.detailsTitle">Details</h2>
         <div class="form-group">
             <label for="cabinCategory" jhiTranslate="addtripform.cabinCategory">Cabin category</label>
-            <input type="text" class="form-control" id="cabinCategory">
+            <input type="text" class="form-control" id="cabinCategory" formControlName="cabinCategory">
         </div>
         <div class="form-group">
             <label for="marketingFlightIdentifier" jhiTranslate="addtripform.marketingFlightIdentifier">Marketing flight identifier</label>
-            <input type="text" class="form-control" id="marketingFlightIdentifier">
+            <input type="text" class="form-control" id="marketingFlightIdentifier" formControlName="marketingFlightIdentifier">
         </div>
         <div class="form-group">
             <label for="operatingFlightIdentifier" jhiTranslate="addtripform.operatingFlightIdentifier">Operating flight identifier</label>
-            <input type="text" class="form-control" id="operatingFlightIdentifier">
+            <input type="text" class="form-control" id="operatingFlightIdentifier" formControlName="operatingFlightIdentifier">
         </div>
         <div class="row">
             <div class="form-group col">
                 <label for="marketingAirline" jhiTranslate="addtripform.marketingAirline">Marketing airline</label>
-                <input type="text" class="form-control" id="marketingAirline">
+                <input type="text" class="form-control" id="marketingAirline" formControlName="marketingAirline">
             </div>
             <div class="form-group col">
                 <label for="operatingAirline" jhiTranslate="addtripform.operatingAirline">Operating airline</label>
-                <input type="text" class="form-control" id="operatingAirline">
+                <input type="text" class="form-control" id="operatingAirline" formControlName="operatingAirline">
             </div>
         </div>
         <div class="row">
             <div class="form-group col">
                 <label for="transportation" jhiTranslate="addtripform.transportation">Transportation</label>
-                <select id="transportation" class="custom-select">
+                <select id="transportation" formControlName="transportation" class="custom-select">
                     <option value="" disabled selected hidden jhiTranslate="addtripform.transportationPlaceholder">Select a transportation</option>
                     <option *ngFor="let name of transportationsKeys" [value]="name"
                             [label]="transportations[name]"></option>
@@ -93,14 +139,19 @@
             </div>
             <div class="form-group col">
                 <label for="bookingClass" jhiTranslate="addtripform.bookingClass">Booking class</label>
-                <input type="text" class="form-control" id="bookingClass">
+                <input type="text" class="form-control" id="bookingClass" formControlName="bookingClass">
             </div>
         </div>
 
         <div class="row">
             <div class="form-group col-sm-6">
                 <label for="cabinClass" jhiTranslate="addtripform.cabinClass">Cabin class</label>
-                <input type="text" class="form-control" id="cabinClass">
+                <select required id="cabinClass" formControlName="cabinClass" class="custom-select">
+                    <option value="" disabled selected hidden jhiTranslate="addtripform.cabinClassPlaceholder">Select
+                        a cabin class</option>
+                    <option *ngFor="let name of cabinsKeys" [value]="name"
+                            [label]="cabins[name]"></option>
+                </select>
             </div>
         </div>
     </div>
@@ -109,8 +160,8 @@
     <div class="form-group text-right">
         <button type="button" class="btn btn-secondary" jhiTranslate="addtripform.cancelButton"
                 (click)="cancelAddTripFormSubmission()">Cancel</button>
-        <button type="button" class="btn btn-primary" jhiTranslate="addtripform.confirmButton"
-                (click)="confirmAddTripFormSubmission()">Confirm>Primary</button>
+        <button [disabled]="!addTripForm.valid" type="submit" class="btn btn-primary"
+                jhiTranslate="addtripform.confirmButton">Confirm>Primary</button>
     </div>
 
 </form>
