@@ -4,9 +4,11 @@ Main page styles
 
 .your-next-trip {
   text-align: center;
+  padding: 15px;
 
-  button {
+  .add-new-trip {
     font-size: 44px;
+    margin-bottom: 20px;
   }
 
   h1 {

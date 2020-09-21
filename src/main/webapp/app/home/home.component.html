@@ -1,11 +1,13 @@
 <div class="your-next-trip">
-    <h1 jhiTranslate="home.title">Your next trip</h1>
-    <mat-divider></mat-divider>
-    <p class="booking-confirmation" jhiTranslate="home.bookingconfirmation">Send your booking confirmation email to
-        me@getfeasy.com, so that we can make your trip freaking easy!</p>
+    <div class="example-sidenav-content">
+        <h1 jhiTranslate="home.title">Your next trip</h1>
+        <mat-divider></mat-divider>
+        <p class="booking-confirmation" jhiTranslate="home.bookingconfirmation">Send your booking confirmation email to
+            me@getfeasy.com, so that we can make your trip freaking easy!</p>
 
-    <!--Future ngFor-->
-    <jhi-trip-recap></jhi-trip-recap>
+        <!--Future ngFor-->
+        <jhi-trip-recap></jhi-trip-recap>
 
-    <button mat-fab color="primary" aria-label="">+</button>
+        <button mat-fab color="primary" class="add-new-trip" (click)="addNewTrip()" aria-label="">+</button>
+    </div>
 </div>

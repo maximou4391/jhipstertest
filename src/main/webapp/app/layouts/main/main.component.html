@@ -4,8 +4,11 @@
     <router-outlet name="navbar"></router-outlet>
 </div>
 
-<div class="container-fluid">
-    <div class="card jh-card">
+<mat-sidenav-container hasBackdrop="true" autosize>
+    <mat-sidenav #sidenav mode="over" disableClose="true">
+        <router-outlet name="addtripform"></router-outlet>
+    </mat-sidenav>
+    <mat-sidenav-content>
         <router-outlet></router-outlet>
-    </div>
-</div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

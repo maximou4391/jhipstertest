@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { BrowserModule } from '@angular/platform-browser';
 
 import './vendor';
@@ -14,6 +15,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { PageRibbonComponent } from './layouts/profiles/page-ribbon.component';
 import { ActiveMenuDirective } from './layouts/navbar/active-menu.directive';
 import { ErrorComponent } from './layouts/error/error.component';
+import { AddTripFormComponent } from './add-trip-form/add-trip-form.component';
 
 @NgModule({
   imports: [
@@ -24,8 +26,17 @@ import { ErrorComponent } from './layouts/error/error.component';
     // jhipster-needle-angular-add-module JHipster will add new module here
     JhipstertestEntityModule,
     JhipstertestAppRoutingModule,
+    MatSidenavModule,
   ],
-  declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
+  declarations: [
+    MainComponent,
+    NavbarComponent,
+    ErrorComponent,
+    PageRibbonComponent,
+    ActiveMenuDirective,
+    FooterComponent,
+    AddTripFormComponent,
+  ],
   bootstrap: [MainComponent],
 })
 export class JhipstertestAppModule {}
