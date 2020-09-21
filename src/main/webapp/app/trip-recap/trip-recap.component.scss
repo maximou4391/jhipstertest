@@ -1,0 +1,53 @@
+.trip-recap-card {
+  border: 1px solid lightgray;
+  margin-bottom: 40px;
+  mat-divider {
+    margin-bottom: 15px;
+    margin-top: 5px;
+  }
+}
+.trip-section {
+  padding-left: 12px;
+  padding-right: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-flight,
+.item-departure {
+  text-align: left;
+}
+
+.item-departure,
+.item-arrival {
+  .trip-item-value {
+    font-size: 40px;
+  }
+}
+
+.item-departs,
+.item-arrival {
+  text-align: right;
+}
+
+.trip-item-label {
+  color: grey;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.trip-item-value {
+  color: #4e295a;
+  font-family: 'Merriweather', serif;
+  font-size: 26px;
+}
+
+.item-flight-icon {
+  align-self: center;
+
+  mat-icon {
+    color: #4e295a;
+    font-size: 64px;
+    transform: rotate(90deg);
+  }
+}

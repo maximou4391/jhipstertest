@@ -16,12 +16,12 @@ h4 {
 
 /* Increase contrast of links to get 100% on Lighthouse Accessability Audit. Override this color if you want to change the link color, or use a Bootswatch theme */
 a {
-  color: #533f03;
-  font-weight: bold;
+  color: #709eca;
+  font-weight: 400;
 }
 
 a:hover {
-  color: #533f03;
+  color: #709eca;
 }
 
 /* override hover color for dropdown-item forced by bootstrap to all a:not([href]):not([tabindex]) elements in _reboot.scss */
@@ -191,5 +191,11 @@ ui bootstrap tweaks
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+// Quick import google Merriweather font, could have been downloading instead
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+
+// Quick import google material icons
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 /* jhipster-needle-scss-add-main JHipster will add new css style */

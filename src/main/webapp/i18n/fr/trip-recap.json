@@ -1,0 +1,9 @@
+{
+  "trip-recap": {
+    "flight": "Numéro de vol",
+    "date": "Date",
+    "departs": "Heure de départ",
+    "departure": "Départ",
+    "arrival": "Arrivée"
+  }
+}
