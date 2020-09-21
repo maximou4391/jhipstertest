@@ -1,3 +1,33 @@
+$inputsHeight: 38px;
+
 .add-trip-form {
+  font-weight: bold;
   padding: 15px;
+
+  .btn-primary {
+    margin-left: 10px;
+  }
+
+  label {
+    font-weight: 500;
+  }
+
+  h2 {
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 12px;
+  }
+
+  .add-trip-section {
+    margin-bottom: 24px;
+  }
+
+  .minutes-and-hours {
+    margin-right: 0;
+    margin-left: 0;
+    span {
+      margin: 0 4px;
+      line-height: $inputsHeight;
+    }
+  }
 }

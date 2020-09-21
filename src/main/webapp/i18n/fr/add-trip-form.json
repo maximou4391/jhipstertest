@@ -1,6 +1,23 @@
 {
-  "addtrip": {
+  "addtripform": {
     "confirmButton": "Confirmer",
-    "cancelButton": "Annuler"
+    "cancelButton": "Annuler",
+    "airportPlaceholder": "Entrer un code d'aéroport",
+    "departureTitle": "Départ",
+    "arrivalTitle": "Arrivée",
+    "detailsTitle": "Détails",
+    "place": "Lieu de départ",
+    "date": "Date",
+    "time": "Heure",
+    "utcZone": "Zone UTC",
+    "cabinCategory": "Catégorie de cabine",
+    "marketingFlightIdentifier": "Marketing flight identifier",
+    "operatingFlightIdentifier": "Opéré par",
+    "marketingAirline": "Compagnie marketing",
+    "operatingAirline": "Compagnie aérienne exploitante",
+    "transportation": "Moyen de transport",
+    "transportationPlaceholder": "Selectionner un moyen de trasnport",
+    "bookingClass": "Classe de réservation",
+    "cabinClass": "Cabine"
   }
 }

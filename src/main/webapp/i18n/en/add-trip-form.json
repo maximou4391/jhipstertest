@@ -1,6 +1,23 @@
 {
-  "addtrip": {
+  "addtripform": {
     "confirmButton": "Confirm",
-    "cancelButton": "Cancel"
+    "cancelButton": "Cancel",
+    "airportPlaceholder": "Enter airport code",
+    "departureTitle": "Departure",
+    "arrivalTitle": "Arrival",
+    "detailsTitle": "Details",
+    "place": "Place",
+    "date": "Date",
+    "time": "Time",
+    "utcZone": "UTC Zone",
+    "cabinCategory": "Cabin category",
+    "marketingFlightIdentifier": "Marketing flight identifier",
+    "operatingFlightIdentifier": "Operating flight identifier",
+    "marketingAirline": "Marketing airline",
+    "operatingAirline": "Operating airline",
+    "transportation": "Transportation",
+    "transportationPlaceholder": "Select a transportation",
+    "bookingClass": "Booking class",
+    "cabinClass": "Cabin class"
   }
 }

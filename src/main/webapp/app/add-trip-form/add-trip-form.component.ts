@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Transportation } from 'app/shared/enums/transportation.enum';
 import { SidenavService } from 'app/shared/services/sidenav.service';
 
 @Component({
@@ -7,9 +8,15 @@ import { SidenavService } from 'app/shared/services/sidenav.service';
   styleUrls: ['./add-trip-form.component.scss'],
 })
 export class AddTripFormComponent implements OnInit {
+  transportations = Transportation;
+
+  transportationsKeys!: string[];
+
   constructor(private sidenavService: SidenavService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.transportationsKeys = Object.keys(this.transportations);
+  }
 
   cancelAddTripFormSubmission(): void {
     // TODO Might need to clean the form as well?
