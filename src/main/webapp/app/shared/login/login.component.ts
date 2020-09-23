@@ -1,27 +1,35 @@
-import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, ViewChild, OnDestroy } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
+import { AddTripService } from 'app/add-trip-form/add-trip.service';
 
 import { LoginService } from 'app/core/login/login.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'jhi-login-modal',
   templateUrl: './login.component.html',
 })
-export class LoginModalComponent implements AfterViewInit {
+export class LoginModalComponent implements AfterViewInit, OnDestroy {
   @ViewChild('username', { static: false })
   username?: ElementRef;
 
   authenticationError = false;
-
+  tripsSubscription?: Subscription;
   loginForm = this.fb.group({
     username: [''],
     password: [''],
     rememberMe: [false],
   });
 
-  constructor(private loginService: LoginService, private router: Router, public activeModal: NgbActiveModal, private fb: FormBuilder) {}
+  constructor(
+    private loginService: LoginService,
+    private router: Router,
+    public activeModal: NgbActiveModal,
+    private fb: FormBuilder,
+    private addTripService: AddTripService
+  ) {}
 
   ngAfterViewInit(): void {
     if (this.username) {
@@ -56,6 +64,7 @@ export class LoginModalComponent implements AfterViewInit {
           ) {
             this.router.navigate(['']);
           }
+          this.tripsSubscription = this.addTripService.getAllTripsFromUser();
         },
         () => (this.authenticationError = true)
       );
@@ -69,5 +78,11 @@ export class LoginModalComponent implements AfterViewInit {
   requestResetPassword(): void {
     this.activeModal.dismiss('to state requestReset');
     this.router.navigate(['/account/reset', 'request']);
+  }
+
+  ngOnDestroy(): void {
+    if (this.tripsSubscription != null) {
+      this.tripsSubscription.unsubscribe();
+    }
   }
 }
