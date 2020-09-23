@@ -4,15 +4,15 @@
     <div class="trip-section">
         <div class="trip-section-item item-flight">
             <div class="trip-item-label" jhiTranslate="trip-recap.flight">Flight</div>
-            <div class="trip-item-value">755</div>
+            <div class="trip-item-value">{{trip.marketingAirline}}</div>
         </div>
         <div class="trip-section-item item-date">
             <div class="trip-item-label" jhiTranslate="trip-recap.date">Date</div>
-            <div class="trip-item-value">03/11/2020</div>
+            <div class="trip-item-value">{{departureDateAndTime.format('YYYY/MM/DD')}}</div>
         </div>
         <div class="trip-section-item item-departs">
             <div class="trip-item-label" jhiTranslate="trip-recap.departs">Departs</div>
-            <div class="trip-item-value">03:35</div>
+            <div class="trip-item-value">{{departureDateAndTime.format('hh:mm')}}</div>
         </div>
     </div>
 
@@ -21,14 +21,14 @@
     <div class="trip-section">
         <div class="trip-section-item item-departure">
             <div class="trip-item-label" jhiTranslate="trip-recap.departure">Departure</div>
-            <div class="trip-item-value">BLR</div>
+            <div class="trip-item-value">{{trip.departurePlace | uppercase }}</div>
         </div>
         <div class="trip-section-item item-flight-icon">
             <mat-icon aria-hidden="true">flight</mat-icon>
         </div>
         <div class="trip-section-item item-arrival">
             <div class="trip-item-label" jhiTranslate="trip-recap.arrival">Arrival</div>
-            <div class="trip-item-value">FRA</div>
+            <div class="trip-item-value">{{trip.arrivalPlace | uppercase }}</div>
         </div>
     </div>
 </mat-card>
