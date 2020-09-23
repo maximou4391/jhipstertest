@@ -1,6 +1,7 @@
 {
   "home": {
     "title": "Your next trip",
+    "signInTeaser": "Sign in to fully enjoy Feasy features!",
     "bookingconfirmation": "Send your booking confirmation email to <a class=\"mailto-feasy\" href=\"mailto:me@getfeasy.com\">me@getfeasy.com</a>, so that we can make your trip freaking easy!"
   }
 }

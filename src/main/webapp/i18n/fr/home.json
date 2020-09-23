@@ -1,6 +1,7 @@
 {
   "home": {
     "title": "Votre prochain voyage",
+    "signInTeaser": "Connectez-vous pour profiter au maximum des fonctionnalités de Feasy!",
     "bookingconfirmation": "Envoyez votre email de confirmation de réservation à <a href=\"mailto:me@getfeasy.com\">me@getfeasy.com</a>, pour que nous puissions faire en sorte que votre voyage soit le plus simple possible!"
   }
 }

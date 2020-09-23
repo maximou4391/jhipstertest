@@ -2,6 +2,8 @@
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';
 
+$navBarHeight: 61px;
+
 /* ==============================================================
 Bootstrap tweaks
 ===============================================================*/
@@ -196,6 +198,16 @@ input.ng-pristine.ng-invalid {
   -webkit-box-shadow: none;
   -ms-box-shadow: none;
   box-shadow: none;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+// To not have a vertical scrollbar added, this way the main container take the all screen height
+mat-sidenav-container {
+  height: calc(100% - #{$navBarHeight});
 }
 
 // Quick import google Merriweather font, could have been downloading instead

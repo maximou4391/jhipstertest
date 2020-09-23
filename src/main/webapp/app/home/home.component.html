@@ -1,13 +1,32 @@
 <div class="your-next-trip">
-    <div class="example-sidenav-content">
-        <h1 jhiTranslate="home.title">Your next trip</h1>
-        <mat-divider></mat-divider>
-        <p class="booking-confirmation" jhiTranslate="home.bookingconfirmation">Send your booking confirmation email to
-            me@getfeasy.com, so that we can make your trip freaking easy!</p>
+    <div [ngSwitch]="isAuthenticated()">
+        <ng-container *ngSwitchCase="true">
+            <h1 jhiTranslate="home.title">Your next trip</h1>
+            <mat-divider></mat-divider>
+            <p class="booking-confirmation" jhiTranslate="home.bookingconfirmation">Send your booking confirmation
+                email to
+                me@getfeasy.com, so that we can make your trip freaking easy!</p>
 
-        <!--Future ngFor-->
-        <jhi-trip-recap></jhi-trip-recap>
+            <ng-container *ngFor="let trip of addTripService.trips$ | async">
+                <jhi-trip-recap [trip]="trip"></jhi-trip-recap>
+            </ng-container>
 
-        <button mat-fab color="primary" class="add-new-trip" (click)="addNewTrip()" aria-label="">+</button>
+            <button mat-fab color="primary" class="add-new-trip" (click)="addNewTrip()" aria-label="">+</button>
+        </ng-container>
+        <ng-container *ngSwitchCase="false">
+            <h2 jhiTranslate="home.signInTeaser">Sign in to fully enjoy Feasy features!</h2>
+            <div class="alert alert-warning">
+                <span jhiTranslate="global.messages.info.authenticated.prefix">If you want to </span>
+                <a class="alert-link" (click)="login()" jhiTranslate="global.messages.info.authenticated.link">sign
+                    in</a><span jhiTranslate="global.messages.info.authenticated.suffix">, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").</span>
+            </div>
+
+            <div class="alert alert-warning">
+                <span jhiTranslate="global.messages.info.register.noaccount">You don't have an account yet?</span>&nbsp;
+                <a class="alert-link" routerLink="account/register"
+                   jhiTranslate="global.messages.info.register.link">Register a new account</a>
+            </div>
+        </ng-container>
+
     </div>
 </div>
