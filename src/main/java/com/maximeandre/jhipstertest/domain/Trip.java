@@ -3,13 +3,12 @@ package com.maximeandre.jhipstertest.domain;
 import java.io.Serializable;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.data.annotation.Id;
 
 /**
- * A trip.
+ * A trip object.
  */
 @org.springframework.data.mongodb.core.mapping.Document(collection = "jhi_trip")
 public class Trip extends AbstractAuditingEntity implements Serializable {
@@ -19,36 +18,36 @@ public class Trip extends AbstractAuditingEntity implements Serializable {
   @Id
   private String id;
 
-  @NotNull
+  @NotBlank
   private String userId;
 
   @NotBlank
   @Size(min = 3, max = 3)
   private String departurePlace;
 
-  @NotNull
+  @NotBlank
   private String departureDate;
 
-  @NotNull
+  @NotBlank
   private String departureTime;
 
-  @NotNull
+  @NotBlank
   private String departureUtcZone;
 
   @NotBlank
   @Size(min = 3, max = 3)
   private String arrivalPlace;
 
-  @NotNull
+  @NotBlank
   private String arrivalDate;
 
-  @NotNull
+  @NotBlank
   private String arrivalTime;
 
-  @NotNull
+  @NotBlank
   private String arrivalUtcZone;
 
-  @NotNull
+  @NotBlank
   private String cabinClass;
 
   private String cabinCategory;
@@ -66,12 +65,12 @@ public class Trip extends AbstractAuditingEntity implements Serializable {
   private String bookingClass;
 
   public Trip(String id, String userId, @NotBlank @Size(min = 3, max = 3) String departurePlace,
-          @NotNull String departureDate, @NotNull String departureTime, @NotNull String departureUtcZone,
-          @NotBlank @Size(min = 3, max = 3) String arrivalPlace, @NotNull String arrivalDate,
-          @NotNull String arrivalTime, @NotNull String arrivalUtcZone, @NotNull String cabinClass,
-          @NotNull String cabinCategory, @NotNull String marketingFlightIdentifier,
-          @NotNull String operatingFlightIdentifier, @NotNull String marketingAirline, @NotNull String operatingAirline,
-          @NotNull String transportation, @NotNull String bookingClass) {
+          @NotBlank String departureDate, @NotBlank String departureTime, @NotBlank String departureUtcZone,
+          @NotBlank @Size(min = 3, max = 3) String arrivalPlace, @NotBlank String arrivalDate,
+          @NotBlank String arrivalTime, @NotBlank String arrivalUtcZone, @NotBlank String cabinClass,
+          @NotBlank String cabinCategory, @NotBlank String marketingFlightIdentifier,
+          @NotBlank String operatingFlightIdentifier, @NotBlank String marketingAirline,
+          @NotBlank String operatingAirline, @NotBlank String transportation, @NotBlank String bookingClass) {
     this.id = id;
     this.userId = userId;
     this.departurePlace = departurePlace;
@@ -242,11 +241,11 @@ public class Trip extends AbstractAuditingEntity implements Serializable {
 
   @Override
   public String toString() {
-    return "TripDTO{" + "id='" + id + '\'' + ", departurePlace='" + departurePlace + '\'' + ", departureDate='"
-            + departureDate + '\'' + ", departureTime='" + departureTime + '\'' + ", departureUtcZone='"
-            + departureUtcZone + '\'' + ", arrivalPlace='" + arrivalPlace + '\'' + ", arrivalDate='" + arrivalDate
-            + '\'' + ", arrivalTime='" + arrivalTime + '\'' + ", arrivalUtcZone='" + arrivalUtcZone + '\''
-            + ", cabinClass='" + cabinClass + '\'' + ", cabinCategory='" + cabinCategory + '\''
+    return "Trip{" + "id='" + id + '\'' + ", userId='" + userId + '\'' + ", departurePlace='" + departurePlace + '\''
+            + ", departureDate='" + departureDate + '\'' + ", departureTime='" + departureTime + '\''
+            + ", departureUtcZone='" + departureUtcZone + '\'' + ", arrivalPlace='" + arrivalPlace + '\''
+            + ", arrivalDate='" + arrivalDate + '\'' + ", arrivalTime='" + arrivalTime + '\'' + ", arrivalUtcZone='"
+            + arrivalUtcZone + '\'' + ", cabinClass='" + cabinClass + '\'' + ", cabinCategory='" + cabinCategory + '\''
             + ", marketingFlightIdentifier='" + marketingFlightIdentifier + '\'' + ", operatingFlightIdentifier='"
             + operatingFlightIdentifier + '\'' + ", marketingAirline='" + marketingAirline + '\''
             + ", operatingAirline='" + operatingAirline + '\'' + ", transportation='" + transportation + '\''

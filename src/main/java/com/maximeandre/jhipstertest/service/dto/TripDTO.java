@@ -1,7 +1,6 @@
 package com.maximeandre.jhipstertest.service.dto;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.maximeandre.jhipstertest.domain.Trip;
@@ -15,29 +14,29 @@ public class TripDTO {
   @Size(min = 3, max = 3)
   private String departurePlace;
 
-  @NotNull
+  @NotBlank
   private String departureDate;
 
-  @NotNull
+  @NotBlank
   private String departureTime;
 
-  @NotNull
+  @NotBlank
   private String departureUtcZone;
 
   @NotBlank
   @Size(min = 3, max = 3)
   private String arrivalPlace;
 
-  @NotNull
+  @NotBlank
   private String arrivalDate;
 
-  @NotNull
+  @NotBlank
   private String arrivalTime;
 
-  @NotNull
+  @NotBlank
   private String arrivalUtcZone;
 
-  @NotNull
+  @NotBlank
   private String cabinClass;
 
   private String cabinCategory;
