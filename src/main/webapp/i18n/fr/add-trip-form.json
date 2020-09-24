@@ -7,7 +7,7 @@
     "arrivalTitle": "Arrivée",
     "detailsTitle": "Détails",
     "place": "Lieu de départ",
-    "placeError": "Lieu de départ est un champ obligatoire!",
+    "placeError": "Lieu de départ est un champ obligatoire de comprenant 3 caractères!",
     "date": "Date",
     "dateError": "Date est un champ obligatoire!",
     "time": "Heure",

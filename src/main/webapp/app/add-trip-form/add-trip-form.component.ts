@@ -37,6 +37,7 @@ export class AddTripFormComponent implements OnInit {
 
     this.utcZones = moment.tz.names();
 
+    // IMPROVEMENT We could add custom validators here to check the format of the inputs
     this.addTripForm = this.formBuilder.group({
       departurePlace: '',
       departureDate: '',
