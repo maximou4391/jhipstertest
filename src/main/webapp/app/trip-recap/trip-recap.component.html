@@ -3,8 +3,10 @@
     <img mat-card-image src="../../content/images/trip_background.jpg" alt="">
     <div class="trip-section">
         <div class="trip-section-item item-flight">
-            <div class="trip-item-label" jhiTranslate="trip-recap.flight">Flight</div>
-            <div class="trip-item-value">{{trip.marketingAirline}}</div>
+            <ng-container *ngIf="flightNumber">
+                <div class="trip-item-label" jhiTranslate="trip-recap.flight">Flight</div>
+                <div class="trip-item-value">{{flightNumber}}</div>
+            </ng-container>
         </div>
         <div class="trip-section-item item-date">
             <div class="trip-item-label" jhiTranslate="trip-recap.date">Date</div>

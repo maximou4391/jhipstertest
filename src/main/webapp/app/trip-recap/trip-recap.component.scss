@@ -13,6 +13,10 @@
   justify-content: space-between;
 }
 
+.trip-section-item {
+  flex: 1 1 0;
+}
+
 .item-flight,
 .item-departure {
   text-align: left;

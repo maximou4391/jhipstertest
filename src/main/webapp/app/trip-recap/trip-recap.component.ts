@@ -12,10 +12,20 @@ export class TripRecapComponent implements OnInit {
 
   departureDateAndTime!: moment.Moment;
 
+  flightNumber?: string;
+
   constructor() {}
 
   ngOnInit(): void {
     // IMPROVEMENT display in UTC? Why?
     this.departureDateAndTime = moment.tz(this.trip.departureDate + ' ' + this.trip.departureTime, this.trip.departureUtcZone);
+
+    if (this.trip.operatingFlightIdentifier !== '') {
+      this.flightNumber = this.trip.operatingFlightIdentifier;
+    }
+    // Marketing is taking precedence over operating number
+    if (this.trip.marketingFlightIdentifier !== '') {
+      this.flightNumber = this.trip.marketingFlightIdentifier;
+    }
   }
 }
