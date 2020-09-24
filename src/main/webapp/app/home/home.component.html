@@ -11,7 +11,8 @@
                 <jhi-trip-recap [trip]="trip"></jhi-trip-recap>
             </ng-container>
 
-            <button mat-fab color="primary" class="add-new-trip" (click)="addNewTrip()" aria-label="">+</button>
+            <label jhiTranslate="home.addTripAccessibleLabel" for="addTripButton"class="sr-only">Click on this button to add a new entry in your trip list!</label>
+            <button mat-fab id="addTripButton" color="primary" class="add-new-trip" (click)="addNewTrip()">+</button>
         </ng-container>
         <ng-container *ngSwitchCase="false">
             <h2 jhiTranslate="home.signInTeaser">Sign in to fully enjoy Feasy features!</h2>
