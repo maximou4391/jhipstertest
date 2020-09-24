@@ -48,6 +48,17 @@ public class TripService {
     trip.setDepartureUtcZone(tripDTO.getDepartureUtcZone());
     trip.setArrivalUtcZone(tripDTO.getArrivalUtcZone());
 
+    trip.setCabinCategory(tripDTO.getCabinCategory());
+
+    trip.setMarketingAirline(tripDTO.getMarketingAirline());
+    trip.setOperatingAirline(tripDTO.getOperatingAirline());
+
+    trip.setMarketingFlightIdentifier(tripDTO.getMarketingFlightIdentifier());
+    trip.setOperatingFlightIdentifier(tripDTO.getOperatingFlightIdentifier());
+
+    trip.setBookingClass(tripDTO.getBookingClass());
+    trip.setTransportation(tripDTO.getTransportation());
+
     trip.setCabinClass(tripDTO.getCabinClass());
 
     this.tripRepository.save(trip);
